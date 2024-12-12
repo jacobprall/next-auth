@@ -1,0 +1,31 @@
+{
+  "name": "adapter-sqlitecloud",
+  "version": "1.0.0",
+  "description": "SQLite Cloud adapter for Auth.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest -c ../utils/vitest.config.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextauthjs/next-auth.git"
+  },
+  "keywords": [
+    "next-auth",
+    "sqlite cloud",
+    "sqlite"
+  ],
+  "type": "module",
+  "author": "Jacob Prall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nextauthjs/next-auth/issues"
+  },
+  "dependencies": {
+    "@auth/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@sqlitecloud/drivers": "1.0.289"
+  },
+  "homepage": "https://github.com/nextauthjs/next-auth#readme"
+}
