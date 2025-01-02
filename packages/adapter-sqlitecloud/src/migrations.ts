@@ -1,7 +1,7 @@
 import { Database } from "@sqlitecloud/drivers"
 const upSQLStatements = [
   `CREATE TABLE IF NOT EXISTS "accounts" (
-    "id" text NOT NULL,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "userId" text NOT NULL DEFAULT NULL,
     "type" text NOT NULL DEFAULT NULL,
     "provider" text NOT NULL DEFAULT NULL,
@@ -16,14 +16,14 @@ const upSQLStatements = [
     PRIMARY KEY (id)
 );`,
   `CREATE TABLE IF NOT EXISTS "sessions" (
-    "id" text NOT NULL,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "sessionToken" text NOT NULL,
     "userId" text NOT NULL DEFAULT NULL,
     "expires" datetime NOT NULL DEFAULT NULL, 
     PRIMARY KEY (sessionToken)
 );`,
   `CREATE TABLE IF NOT EXISTS "users" (
-    "id" text NOT NULL DEFAULT '',
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "name" text DEFAULT NULL,
     "email" text DEFAULT NULL,
     "emailVerified" datetime DEFAULT NULL,
@@ -37,7 +37,7 @@ const upSQLStatements = [
     PRIMARY KEY (token)
 );`,
   `CREATE TABLE IF NOT EXISTS "authenticator" (
-    "id" TEXT NOT NULL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "credentialID" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
     "providerAccountId" TEXT NOT NULL,
@@ -47,7 +47,7 @@ const upSQLStatements = [
     "credentialBackedUp" BOOLEAN NOT NULL,
     "transports" TEXT,
     FOREIGN KEY ("userId") 
-        REFERENCES "User" ("id") 
+        REFERENCES "users" ("id") 
         ON DELETE CASCADE 
         ON UPDATE CASCADE
 );`,
