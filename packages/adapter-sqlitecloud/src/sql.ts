@@ -1,5 +1,5 @@
 // USER
-export const INSERT_USER = `INSERT INTO users (id, name, email, emailVerified, image) VALUES (?, ?, ?, ?, ?)`
+export const INSERT_USER = `INSERT INTO users (name, email, emailVerified, image) VALUES (?, ?, ?, ?)`
 export const GET_USER_BY_ID = `SELECT * FROM users WHERE id = ?`
 export const GET_USER_BY_ROW_ID = `SELECT * FROM users WHERE rowid = ?`
 export const GET_USER_BY_EMAIL = `SELECT * FROM users WHERE email = ?`
@@ -28,11 +28,11 @@ export const DELETE_SESSION_BY_USER_ID = `DELETE FROM sessions WHERE userId = ?`
 // ACCOUNT
 export const INSERT_ACCOUNT = `
   INSERT INTO accounts (
-    id, userId, type, provider, 
+    userId, type, provider, 
     providerAccountId, refresh_token, access_token, 
     expires_at, token_type, scope, id_token, session_state
   ) 
-  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`
+  VALUES (?,?,?,?,?,?,?,?,?,?,?)`
 export const GET_ACCOUNT_BY_ID = `SELECT * FROM accounts WHERE id = ? `
 export const GET_ACCOUNT_BY_PROVIDER_AND_PROVIDER_ACCOUNT_ID = `SELECT * FROM accounts WHERE provider = ? AND providerAccountId = ?`
 export const DELETE_ACCOUNT_BY_PROVIDER_AND_PROVIDER_ACCOUNT_ID = `DELETE FROM accounts WHERE provider = ? AND providerAccountId = ?`

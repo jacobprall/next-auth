@@ -5,6 +5,7 @@ import type {
   AdapterSession,
   AdapterUser,
   VerificationToken,
+  // @ts-expect-error
 } from "@auth/core/adapters"
 import {
   INSERT_ACCOUNT,
@@ -219,7 +220,7 @@ const format = {
   },
 }
 
-function getObjectFrom(row: SQLiteCloudRow) {
+export function getObjectFrom(row: SQLiteCloudRow) {
   const obj: Record<string, any> = {}
   for (const key in row) {
     obj[key] = row[key]

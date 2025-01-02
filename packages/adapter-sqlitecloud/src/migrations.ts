@@ -12,29 +12,26 @@ const upSQLStatements = [
     "token_type" text DEFAULT NULL,
     "scope" text DEFAULT NULL,
     "id_token" text DEFAULT NULL,
-    "session_state" text DEFAULT NULL,
-    PRIMARY KEY (id)
+    "session_state" text DEFAULT NULL
 );`,
   `CREATE TABLE IF NOT EXISTS "sessions" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "sessionToken" text NOT NULL,
     "userId" text NOT NULL DEFAULT NULL,
-    "expires" datetime NOT NULL DEFAULT NULL, 
-    PRIMARY KEY (sessionToken)
+    "expires" datetime NOT NULL DEFAULT NULL
 );`,
   `CREATE TABLE IF NOT EXISTS "users" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "name" text DEFAULT NULL,
     "email" text DEFAULT NULL,
     "emailVerified" datetime DEFAULT NULL,
-    "image" text DEFAULT NULL, 
-    PRIMARY KEY (id)
+    "image" text DEFAULT NULL
 );`,
   `CREATE TABLE IF NOT EXISTS "verification_tokens" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "identifier" text NOT NULL,
     "token" text NOT NULL DEFAULT NULL,
-    "expires" datetime NOT NULL DEFAULT NULL, 
-    PRIMARY KEY (token)
+    "expires" datetime NOT NULL DEFAULT NULL
 );`,
   `CREATE TABLE IF NOT EXISTS "authenticator" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
