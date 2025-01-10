@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": ".prettierignore",
+      "options": {
+        "parser": "none"
+      }
+    }
+  ]
+}
